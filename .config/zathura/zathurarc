@@ -1,0 +1,92 @@
+# Misc
+set guioptions s
+set statusbar-home-tilde true
+set selection-clipboard clipboard
+set adjust-open width
+set recolor-reverse-video false
+set first-page-column 1
+set incremental-search false
+set font "JetBrains Mono 10"
+
+# Keybinds
+map \< goto top
+map \> goto bottom
+map b navigate previous
+map e follow
+map f navigate next
+map d toggle_page_mode
+map p goto top
+map [normal]     <C-l> reload
+map [fullscreen] <C-l> reload
+map <C-+> zoom in
+map <C--> zoom out
+map <C-=> zoom in
+map <C-)> adjust_window best-fit
+map <C-0> adjust_window width
+map <C-a> scroll full-left
+map <C-b> scroll left
+map [normal]     e scroll full-right
+map [fullscreen] e scroll full-right
+map <C-e> scroll full-right
+map <C-f> scroll right
+map <C-g> abort
+map <C-n> scroll down
+map <C-p> scroll up
+map <C-v> scroll full-down
+map [normal]     <C-e> scroll down
+map [fullscreen] <C-e> scroll down
+map [normal]     y scroll up
+map [fullscreen] y scroll up
+map [normal]     <C-y> scroll up
+map [fullscreen] <C-y> scroll up
+map <A-\<> goto top
+map <A-\>> goto bottom
+map <A-v> scroll full-up
+
+unmap u
+map u scroll half-up
+map i recolor
+set recolor                     true
+
+# Show only the file name in the window title.
+set window-title-basename true
+
+set default-fg                "#F3F6F4"
+set default-bg 			          "#141414"
+
+set completion-bg		          "#141414"
+set completion-fg		          "#F3F6F4"
+set completion-highlight-bg	  "#575268"
+set completion-highlight-fg	  "#F3F6F4"
+set completion-group-bg		    "#313244"
+set completion-group-fg		    "#89B4FA"
+
+set statusbar-fg		          "#F3F6F4"
+set statusbar-bg		          "#141414"
+
+set notification-bg		        "#141414"
+set notification-fg		        "#F3F6F4"
+set notification-error-bg	    "#141414"
+set notification-error-fg	    "#F38BA8"
+set notification-warning-bg	  "#141414"
+set notification-warning-fg	  "#FAE3B0"
+
+set inputbar-fg			          "#F3F6F4"
+set inputbar-bg 		          "#141414"
+
+set recolor-lightcolor		    "#306930"
+set recolor-darkcolor		      "#F3F6F4"
+
+set index-fg			            "#F3F6F4"
+set index-bg			            "#1E1E2E"
+set index-active-fg		        "#F3F6F4"
+set index-active-bg		        "#141414"
+
+set render-loading-bg		      "#1E1E2E"
+set render-loading-fg		      "#F3F6F4"
+
+set highlight-color		        "#575268"
+set highlight-fg              "#F5C2E7"
+set highlight-active-color	  "#F5C2E7"
+
+
