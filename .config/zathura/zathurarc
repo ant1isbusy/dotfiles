@@ -1,14 +1,12 @@
-# Misc
+### Settings from original zathurarc ###
 set guioptions s
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 set adjust-open width
-set recolor-reverse-video false
 set first-page-column 1
 set incremental-search false
+unmap i
 set font "JetBrains Mono 10"
-
-# Keybinds
 map \< goto top
 map \> goto bottom
 map b navigate previous
@@ -42,51 +40,84 @@ map [fullscreen] <C-y> scroll up
 map <A-\<> goto top
 map <A-\>> goto bottom
 map <A-v> scroll full-up
-
 unmap u
 map u scroll half-up
-map i recolor
-set recolor                     true
-
-# Show only the file name in the window title.
 set window-title-basename true
 
-set default-fg                "#F3F6F4"
-set default-bg 			          "#141414"
+### zathura-pywal ###
+# Allow recolor
+set recolor 'true'
 
-set completion-bg		          "#141414"
-set completion-fg		          "#F3F6F4"
-set completion-highlight-bg	  "#575268"
-set completion-highlight-fg	  "#F3F6F4"
-set completion-group-bg		    "#313244"
-set completion-group-fg		    "#89B4FA"
+# Don't allow original hue when recoloring
+set recolor-keephue 'false'
 
-set statusbar-fg		          "#F3F6F4"
-set statusbar-bg		          "#141414"
+# Don't keep original image colors while recoloring
+set recolor-reverse-video 'false'
 
-set notification-bg		        "#141414"
-set notification-fg		        "#F3F6F4"
-set notification-error-bg	    "#141414"
-set notification-error-fg	    "#F38BA8"
-set notification-warning-bg	  "#141414"
-set notification-warning-fg	  "#FAE3B0"
+# Command line completion entries
+set completion-fg '#dee2d3'
+set completion-bg '#171110'
 
-set inputbar-fg			          "#F3F6F4"
-set inputbar-bg 		          "#141414"
+# Command line completion group elements
+set completion-group-fg '#828D6E'
+set completion-group-bg '#171110'
 
-set recolor-lightcolor		    "#306930"
-set recolor-darkcolor		      "#F3F6F4"
+# Current command line completion element
+set completion-highlight-fg '#171110'
+set completion-highlight-bg '#dee2d3'
 
-set index-fg			            "#F3F6F4"
-set index-bg			            "#1E1E2E"
-set index-active-fg		        "#F3F6F4"
-set index-active-bg		        "#141414"
+# Default foreground/background color
+set default-bg rgba(23,17,16,1)
 
-set render-loading-bg		      "#1E1E2E"
-set render-loading-fg		      "#F3F6F4"
+# Input bar
+set inputbar-fg '#dee2d3'
+set inputbar-bg '#171110'
 
-set highlight-color		        "#575268"
-set highlight-fg              "#F5C2E7"
-set highlight-active-color	  "#F5C2E7"
+# Notification
+set notification-fg '#dee2d3'
+set notification-bg '#171110'
 
+# Error notification
+set notification-error-fg '#dee2d3'
+set notification-error-bg '#AE9853'
 
+# Warning notification
+set notification-warning-fg '#dee2d3'
+set notification-warning-bg '#AE9853'
+
+# Tab - TODO
+# set tabbar-fg
+# set tabbar-bg
+
+# Focused tab - TODO
+# set tabbar-focus-fg
+# set tabbar-focus-bg
+
+# Status bar
+set statusbar-fg '#dee2d3'
+set statusbar-bg '#171110'
+
+# Highlighting parts of the document (e.g. show search results)
+
+set highlight-color rgba(255,255,0,0.3)   # pale yellow background
+
+# Text color for highlighted search terms
+set highlight-fg rgba(0,0,0,1)             # solid black text
+
+set highlight-active-color rgba(255,0,0,0.3)  
+
+# Represent light/dark colors in recoloring mode
+set recolor-lightcolor rgba(0,0,0,0)
+set recolor-darkcolor '#dee2d3'
+
+# 'Loading...' text
+set render-loading-fg '#dee2d3'
+set render-loading-bg '#171110'
+
+# Index mode
+set index-fg '#dee2d3'
+set index-bg '#171110'
+
+# Selected element in index mode
+set index-active-fg '#171110'
+set index-active-bg '#dee2d3'
