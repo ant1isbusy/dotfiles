@@ -18,11 +18,10 @@ wals() {
     fi && \
     
     # Run the other scripts silently
-    zathura-pywal -a 0.85 >/dev/null 2>&1 && \
+    zathura-pywal -a 1 >/dev/null 2>&1 && \
     ~/misc/alacritty-color-export/script.sh >/dev/null 2>&1 && \
     ~/.config/waybar/scripts/launch.sh > /dev/null 2>&1
 }
-
 
 alias clf="clear && fastfetch"
 alias ff="fastfetch"
@@ -32,8 +31,9 @@ alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
 alias shtd="shutdown"
 alias ex="exit"
 alias rb="reboot"
+alias weather="curl wttr.in/graz"
 alias zshrc="nvim ~/.zshrc"
-alias show-todos="bat ~/.docs/todo.md"
+alias show-todos="bat -p ~/.docs/todo.md"
 alias tt="tree"
 alias venvactivate="source venv/bin/activate"
 alias dcu="sudo docker-compose up"
