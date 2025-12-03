@@ -18,7 +18,7 @@ wals() {
     fi && \
     
     # Run the other scripts silently
-    zathura-pywal -a 1 >/dev/null 2>&1 && \
+    zathura-pywal -a 0.55 >/dev/null 2>&1 && \
     ~/misc/alacritty-color-export/script.sh >/dev/null 2>&1 && \
     ~/.config/waybar/scripts/launch.sh > /dev/null 2>&1
 }
@@ -39,13 +39,11 @@ alias venvactivate="source venv/bin/activate"
 alias dcu="sudo docker-compose up"
 alias dcd="sudo docker-compose down"
 alias curr="zathura ~/uni/Studium/curr.pdf"
-# alias swebcompile="cd /tmp/ && rm -rf sweb && mkdir -p /tmp/sweb && cd /tmp/sweb/ && cmake ~/uni/OS/bss24a5/ && make -j"
-# alias os="cd ~/uni/Archive/24SS/OS/bss24a5/"
 alias todo="nvim ~/.docs/todo.md"
 alias prem='python3 ~/coding/clifootball/query_fav.py "EPL" "Arsenal"'
-alias iphone-send="kdeconnect-cli -d 81d968d9_c91c_499d_9ec4_1be45553980f --share "
 alias wifi-connect="nmcli device wifi connect"
 alias notes="nvim misc/notes.md"
+alias new-typ-note="cp ~/Templates/note.typ ."
 source $HOME/.cargo/env
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
