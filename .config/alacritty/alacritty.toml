@@ -1,46 +1,193 @@
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control|Shift"
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
 
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control|Shift"
+[window]
+dynamic_padding = true
+decorations = "full"
+title = "Alacritty@CachyOS"
+opacity = 0.65
+decorations_theme_variant = "Dark"
 
-[colors.primary]
-background = "#282828"
-foreground = "#ebdbb2"
+[window.dimensions]
+columns = 100
+lines = 30
 
-[font]
-size = 16
-
-[font.bold]
-family = "JetBrains Mono"
-style = "Bold"
-
-[font.italic]
-family = "JetBrains Mono"
-style = "Italic"
-
-[font.normal]
-family = "JetBrains Mono Nerd Font Mono"
-style = "Regular"
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
 
 [scrolling]
 history = 10000
 multiplier = 3
 
-[window]
-dynamic_title = true
-decorations = "none"
+[colors]
+draw_bold_text_with_bright_colors = true
+[font]
+size = 15
 
-[window.padding]
-x = 10
-y = 15
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
 
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[cursor]
+style = "Underline"
+vi_mode_style = "None"
+unfocused_hollow = true
+thickness = 0.15
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+mouse = "Middle"
+action = "PasteSelection"
 
 [keyboard]
+[[keyboard.bindings]]
+key = "Paste"
+action = "Paste"
 
+[[keyboard.bindings]]
+key = "Copy"
+action = "Copy"
 
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+action = "ClearLogNotice"
 
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+mode = "~Vi"
+chars = "\f"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToBottom"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+mode = "Vi"
+action = "ClearSelection"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[general]
+live_config_reload = true
+working_directory = "None"
+
+# BEGIN WAL
+[colors.primary]
+background = '#151515'
+foreground = '#d0d0d0'
+
+[colors.cursor]
+text   = '#151515' # Apply background color to color of text inside cursor
+cursor = '#d0d0d0' # Apply foreground color to color of cursor
+
+[colors.vi_mode_cursor]
+text    = '#151515' # Same as above
+cursor  = '#d0d0d0'
+
+[colors.search.matches]
+foreground = '#151515' # Same as above
+background = '#f5f5f5' # Apply bright/white color to bg color of matching search
+
+[colors.search.focused_match]
+foreground = 'CellBackground'
+background = 'CellForeground'
+
+[colors.line_indicator]
+foreground = 'None'
+background = 'None'
+
+[colors.footer_bar]
+foreground = '#505050'
+background = '#d0d0d0'
+
+[colors.selection]
+text       = 'CellBackground'
+background = 'CellForeground'
+
+[colors.normal]
+black   = '#151515'
+red     = '#fb9fb1'
+green   = '#acc267'
+yellow  = '#ddb26f'
+blue    = '#6fc2ef'
+magenta = '#e1a3ee'
+cyan    = '#12cfc0'
+white   = '#d0d0d0'
+
+[colors.bright]
+black   = '#505050'
+red     = '#fb9fb1'
+green   = '#acc267'
+yellow  = '#ddb26f'
+blue    = '#6fc2ef'
+magenta = '#e1a3ee'
+cyan    = '#12cfc0'
+white   = '#f5f5f5'
+# END WAL
