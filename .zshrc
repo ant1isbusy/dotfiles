@@ -18,7 +18,7 @@ wals() {
     fi && \
     
     # Run the other scripts silently
-    zathura-pywal -a 0.55 >/dev/null 2>&1 && \
+    zathura-pywal -a 0.65 >/dev/null 2>&1 && \
     ~/misc/alacritty-color-export/script.sh >/dev/null 2>&1 && \
     ~/.config/waybar/scripts/launch.sh > /dev/null 2>&1
 }
@@ -33,11 +33,8 @@ alias ex="exit"
 alias rb="reboot"
 alias weather="curl wttr.in/graz"
 alias zshrc="nvim ~/.zshrc"
-alias show-todos="bat -p ~/.docs/todo.md"
 alias tt="tree"
 alias venvactivate="source venv/bin/activate"
-alias dcu="sudo docker-compose up"
-alias dcd="sudo docker-compose down"
 alias curr="zathura ~/uni/Studium/curr.pdf"
 alias todo="nvim ~/.docs/todo.md"
 alias prem='python3 ~/coding/clifootball/query_fav.py "EPL" "Arsenal"'
