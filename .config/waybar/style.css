@@ -13,8 +13,6 @@
 
 window#waybar {
     background-color: @bg;
-
-
     color: @cursor;
     transition-property: background-color;
     transition-duration: .5s;
@@ -335,4 +333,10 @@ label:focus {
 
 #privacy-item.audio-out {
     background-color: #0069d4;
+}
+
+#custom-spotify {
+    background-color: @bg;
+    color: @fg;
+    min-width: 100px;
 }
