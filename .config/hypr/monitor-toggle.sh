@@ -6,7 +6,7 @@ CURRENT_STATE=$(cat "$STATE_FILE" 2>/dev/null || echo "0")
 case "$CURRENT_STATE" in
 0)
   # Laptop only
-  hyprctl keyword monitor "eDP-2,2560x1600@60.0,auto,1.25"
+  hyprctl keyword monitor "eDP-2,2560x1600@120.0,auto,1.25"
   hyprctl keyword monitor "HDMI-A-1,disable"
   echo 1 >"$STATE_FILE"
   notify-send "Display Mode: Laptop Only"
