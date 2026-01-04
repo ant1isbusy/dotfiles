@@ -1,0 +1,11 @@
+max-visible=10
+layer=top
+font=Monaspace Krypton NF
+background-color=#000000ef
+text-color=#d8dee9
+border-color=#000000
+border-radius=2
+max-icon-size=48
+default-timeout=5000
+anchor=top-right
+margin=20
