@@ -3,6 +3,6 @@ Preview of the current setup:
 
 ![missing](setup.png)
 
-Wallpaper: https://www.nga.gov/artworks/46652-banks-seine-vetheuil
+Wallpaper: [https://www.nga.gov/artworks/46652-banks-seine-vetheuil](https://www.nga.gov/artworks/195490-old-house-east-hampton)
 
 Main UI font: Monaspace Krypton NF
