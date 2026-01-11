@@ -23,18 +23,31 @@ wals() {
     ~/.config/waybar/scripts/launch.sh > /dev/null 2>&1
 }
 
-alias clf="clear && fastfetch"
-alias ff="fastfetch"
+yt-mp3() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: yt-mp3 <youtube-url>"
+        return 1
+    fi
+
+    yt-dlp -x \
+           --audio-format mp3 \
+           --audio-quality 128k \
+           --output "%(title)s.%(ext)s" \
+           "$1"
+}
+
+alias ff="clear && fastfetch --logo none"
 alias za="zathura"
 alias cl="clear"
 alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
 alias shtd="shutdown"
 alias ex="exit"
 alias rb="reboot"
-alias weather="curl wttr.in/graz"
 alias zshrc="nvim ~/.zshrc"
 alias tt="tree"
 alias venvactivate="source venv/bin/activate"
+alias dcu="sudo docker-compose up"
+alias dcd="sudo docker-compose down"
 alias curr="zathura ~/uni/Studium/curr.pdf"
 alias todo="nvim ~/.docs/todo.md"
 alias prem='python3 ~/coding/clifootball/query_fav.py "EPL" "Arsenal"'
