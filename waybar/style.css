@@ -1,8 +1,6 @@
-@import '/home/antoine/.cache/wal/colors-waybar.css';
-
-@define-color bg @background;
-@define-color fg @foreground;
-@define-color textcolor @cursor;
+/* Hardcoded Milky Colors */
+@define-color milky-bg rgba(245, 245, 245, 0.9);
+@define-color dark-gray #333333;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -12,8 +10,8 @@
 }
 
 window#waybar {
-    background-color: @bg;
-    color: @cursor;
+    background-color: @milky-bg;
+    color: @dark-gray;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -21,7 +19,6 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
-
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -31,46 +28,36 @@ button {
     border-radius: 0;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
+    box-shadow: inset 0 -3px @dark-gray;
 }
 
 #workspaces button {
     border-radius: 5px;
     transition: 0.2s ease-in-out;
     padding: 0 5px;
-    background-color: @bg;
-    color: @cursor;
+    background-color: transparent;
+    color: @dark-gray;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -2px @dark-gray;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+    color: #ffffff;
 }
 
 #workspaces button.active {
-    background-color: #e8eaed;
-    color: #000000;
-}
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: @dark-gray;
+    color: @milky-bg;
 }
 
 #clock,
@@ -91,51 +78,15 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 13px;
-    color: @cursor;
-    margin: 0 5px;
+    color: @dark-gray;
+    margin: 0 2px;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
+/* Modules Backgrounds - Setting to transparent to let the bar bg show */
+#clock, #battery, #cpu, #memory, #disk, #backlight, #network, #pulseaudio {
+    background-color: transparent;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-}
-
-#clock {
-    transition: 0.2s ease-in-out;
-    background-color: @bg ;
-    color: @cursor;
-}
-
-#battery {
-    transition: 0.2s ease-in-out;
-    background-color: @bg;
-    color: @cursor;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: @cursor;
-    background-color: @bg;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -146,197 +97,30 @@ button:hover {
     animation-direction: alternate;
 }
 
-#power-profiles-daemon {
-    background-color: @bg;
-    transition: 0.2s ease-in-out;
-    padding-right: 15px;
-    color: @cursor;
-}
-
-#power-profiles-daemon.performance {
-    background-color: @bg;
-    color: @cursor;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: @bg;
-    color: @cursor;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: @bg;
-    color: @cursor;
-}
-
-label:focus {
-    background-color: @bg;
-}
-
-#cpu {
-    background-color: @bg;
-    color: @fg;
-}
-
-#memory {
-    background-color: @bg;
-}
-
-#disk {
-    background-color: @bg;
-}
-
-#backlight {
-    transition: 0.2s ease-in-out;
-    background-color: @bg;
-}
-
-#network {
-    transition: 0.2s ease-in-out;
-    background-color: @bg;
+@keyframes blink {
+    to {
+        background-color: @dark-gray;
+        color: @milky-bg;
+    }
 }
 
 #network.disconnected {
     background-color: #f53c3c;
-}
-
-#pulseaudio {
-    transition: 0.2s ease-in-out;
-    background-color: @bg;
-    color: @cursor;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
-#custom-media {
-    transition: 0.2s ease-in-out;
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray>.passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray>.needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    transition: 0.2s ease-in-out;
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state>label {
-    padding: 0 5px;
-}
-
-#keyboard-state>label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-    background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
+    color: #ffffff;
 }
 
 #custom-spotify {
-    background-color: @bg;
-    color: @fg;
+    background-color: transparent;
+    color: @dark-gray;
     min-width: 100px;
+}
+
+/* Cleaning up secondary module colors for consistency */
+#pulseaudio.muted, #wireplumber.muted {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: @dark-gray;
+}
+
+#tray {
+    background-color: transparent;
 }
