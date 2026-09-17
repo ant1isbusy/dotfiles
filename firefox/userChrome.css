@@ -1,0 +1,137 @@
+/* ==========================================================
+   ULTRA-THIN TWO-ROW MINIMAL LAYOUT (NATIVE XUL FLOW)
+   ========================================================== */
+
+/* 1. Reset heights natively */
+:root {
+  --tab-min-height: 22px !important;
+  --tab-block-margin: 0px !important;
+}
+
+/* 2. ROW 1: Tabs (Dynamic Equal Division) */
+#TabsToolbar {
+  min-height: 22px !important;
+  max-height: 22px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Let tabs expand equally across available width (1/2, 1/3, 1/4...) */
+.tabbrowser-tab[fadein]:not([pinned]) {
+  max-width: 100% !important;
+  min-width: 0px !important;
+  flex-grow: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tabbrowser-tab {
+  min-height: 22px !important;
+}
+
+/* Flat tab styling with subtle dividing line */
+.tab-background {
+  border-radius: 0px !important;
+  margin-block: 0px !important;
+  box-shadow: none !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.tab-content {
+  align-items: center !important;
+  padding-block: 0 !important;
+  padding-inline: 6px !important;
+}
+
+.tab-label-container {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.tab-label {
+  font-size: 12px !important;
+  line-height: normal !important;
+  transform: translateY(2px) !important;
+}
+
+.tab-icon-image {
+  width: 13px !important;
+  height: 13px !important;
+  margin-inline-end: 5px !important;
+  transform: translateY(2px) !important;
+}
+
+/* 3. ROW 2: Nav-bar (URL Bar + Right-side icons) */
+#nav-bar {
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 4px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#urlbar-container {
+  --urlbar-container-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#urlbar {
+  --urlbar-height: 20px !important;
+  --urlbar-min-height: 20px !important;
+  min-height: 20px !important;
+  font-size: 11px !important;
+  box-shadow: none !important;
+  padding-block: 0 !important;
+}
+
+#urlbar-background {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Right-side icon & hover-box sizing */
+#nav-bar toolbarbutton,
+#nav-bar .toolbarbutton-1 {
+  height: 20px !important;
+  min-height: 20px !important;
+  max-height: 20px !important;
+  margin: 1px 1px !important;
+  padding: 0 3px !important;
+  border-radius: 2px !important;
+}
+
+/* Strip internal padding that blows out the download & menu hover boxes */
+#nav-bar .toolbarbutton-badge-stack {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#nav-bar toolbarbutton .toolbarbutton-icon {
+  width: 13px !important;
+  height: 13px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 4. Strip Clutter */
+#back-button,
+#forward-button,
+#stop-reload-button,
+#alltabs-button,
+#firefox-view-button,
+#tabs-newtab-button,
+#TabsToolbar #new-tab-button,
+.tab-close-button,
+.titlebar-spacer,
+.titlebar-buttonbox-container,
+toolbarspring,
+#identity-permission-box {
+  display: none !important;
+}
